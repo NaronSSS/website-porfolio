@@ -1,0 +1,273 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: beige; 
+    color: black;
+    font-family: Arial, Helvetica, sans-serif, Helvetica Neue;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    min-height: 110vh;
+    flex-direction: column;
+}
+/*
+.tools_bar{
+    list-style-type: none;
+    padding: 0;
+    display: flexbox;
+}
+
+.tools_bar li {
+    display: inline-block;
+    padding: 5px;
+    margin-left: 20px;
+}
+
+.tools_bar li:first-child {
+    margin-left: 0;
+}
+*/
+header {
+    background-color: #ede8d0;
+    padding: 1px;
+    border: solid; 
+    border-color: #8a9a5b;
+    border-width: 0 0 medium;
+    text-align: left;
+    display: flex;
+    /* how the browser distributes space bewteen and around content items along the main axis of flex*/
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* select the element you want to apply the hover effect to */
+button {
+    background-color:#8a9a5b;
+    color: white;
+    border-radius: 10px 100px / 120px;
+    border: none;
+    padding: 4px;
+    font-size: 110%;
+    margin-left: 6rem; 
+    cursor: pointer; 
+    transition: 0.5s ease;
+    width: 9rem; 
+    margin-top: 5px;
+    position: relative;
+    
+}
+  
+/* define the hover style within the :hover selector */
+button:hover {
+    background-color: #355e3b;
+    color: yellowgreen;
+    transform: scale(1.1);
+}
+
+button:last-child {
+    margin-right: 20px; 
+}
+
+
+nav a {
+    text-decoration: none;
+    color: white; 
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.name_logo {
+    font-size: 60px;
+    color: #8a9a5b;
+    /*font-weight -  how thick the text you want to look at */
+    font-weight: 800;
+    /*cursor -  sets the appearance of the mouse*/
+    cursor: pointer; 
+    /*transition - a way to control animation speed when changing properties*/
+    transition: 0.5s ease;
+    text-decoration: none;
+    margin-left: 10px; 
+    padding: 1px 0 10px 0; 
+}
+
+.name_logo:hover {
+    transform: scale(1.1);
+}
+
+
+.connect_info{
+    display: inline-flex;
+}
+
+.connect_info img {
+    width: 30px; 
+    height: 30px;
+    margin-left: 15px; 
+}
+
+.connect_info a {
+    justify-content: center;
+    align-items: center; 
+    cursor: pointer; 
+}
+
+
+.main_body {
+    display: flex;
+    padding: 1px;
+    width: auto;
+    margin: auto;
+    flex-direction: row;
+    /*justify content - defines how the browser distributes space between and around content items*/
+    justify-content: center;
+    align-items: center;
+    /*defines the size of the gap between rows and columns in flexbox, grid*/
+    gap: 80px; 
+    min-height: 100vh;
+}
+
+
+
+.main_body .profile_pic img {
+    margin-left: 15px;
+    padding-top: 2px; 
+    border-radius: 45%;
+    position: relative;
+    width: 400px;
+}
+
+.main_body .home_content h1 {
+    font-size: 65px; 
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 25px;
+    margin-top: 0; 
+}
+
+/* before - use the content property to specify the content to insert*/
+.text_intro {
+    font-size: 40px;
+    font-weight: 200px;
+}
+
+.text_intro span{
+    position: relative;
+}
+
+.text_intro span::before {
+    content: "it's Phong";
+    color: #8a9a5b; 
+    animation: words 10s infinite;
+}
+
+/* after - insert something after the content*/
+.text_intro span::after {
+    content:""; 
+    background-color: beige;
+    position: absolute; 
+    width: 5px; 
+    height: 40px;
+    border-left: 3px solid beige;
+    right:-8; 
+    margin-left: 5px; 
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 3px solid #8a9a5b; 
+    }
+}
+
+@keyframes words {
+   0%, 50% {
+    content: "Looking for internship!";
+   }
+   50%, 100% {
+    content: "it's Phong"
+   }
+}
+
+.experience_info {
+    margin: 0;
+}
+
+.experience_info h1 {
+    color: #355e3b;
+}
+
+.skills_info {
+    margin:0;
+}
+
+.skills_info h1 {
+    color: #355e3b;
+}
+
+footer {
+    background: black;
+    color: gray;
+    margin-top: 10px;
+    display: flex; 
+    flex-direction: row;
+}
+
+footer p {
+    margin: auto;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .home_content h1 {
+        font-size: 40px; 
+        font-weight: 400;
+        line-height: 1.3;
+        margin-bottom: 20px;
+        margin-top: 0; 
+    }
+    .text_intro {
+        font-size: 25px;
+        font-weight: 200px;
+    }
+
+    .main_body {
+        gap: 20px;
+    }
+
+    .text_intro span::after {
+        content:""; 
+        background-color: beige;
+        position: absolute; 
+        width: 5px; 
+        height: 30px;
+        border-left: 3px solid beige;
+        right:-8; 
+        margin-left: 5px; 
+        animation: cursor 0.6s infinite;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .main_body {
+        flex-direction: column;
+        margin: auto;
+        margin-top: 20px; 
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main_body {
+        flex-direction: column;
+        margin: 20px 10px; 
+    }
+
+}
+
+
+
+
+
